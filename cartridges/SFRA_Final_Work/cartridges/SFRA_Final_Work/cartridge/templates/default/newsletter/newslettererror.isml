@@ -1,0 +1,6 @@
+<isdecorate template="common/layout/page">
+    <h3>
+        ${Resource.msg('error.request.subscription','newsletter',null)}
+    </h3>
+    ${Resource.msg('returning.to.message','newsletter',null)} <a href="${pdict.continueUrl}">${Resource.msg('message.newsletter.subscrition','newsletter',null)}</a>.
+</isdecorate>

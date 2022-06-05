@@ -1,0 +1,79 @@
+
+<style>
+    input.checboxSize{
+        width:20px;
+        height:25px;
+        
+    }
+</style>
+
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/login.css');
+    </isscript>
+    <div class="row justify-content-center equal-height">
+        <div class="col-sm-8 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="login-form-nav">
+                        <form action="${pdict.actionUrl}" method="POST" class="newsletter-form" <isprint value="${pdict.newsletterForm.attributes}" encoding="off" />>
+
+                            <div class="form-group required">
+                                <label class="form-control-label">
+                                    <isprint value="${pdict.newsletterForm.fname.label}" encoding="htmlcontent" />
+                                </label>
+                                <input type="input" class="form-control" id="newsletter-form-fname" 
+                                data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                                <isprint value="${pdict.newsletterForm.fname.attributes}" encoding="off" />>
+                                <div class="invalid-feedback"></div>
+                            </div>
+
+                            <div class="form-group required">
+                                <label class="form-control-label">
+                                    <isprint value="${pdict.newsletterForm.lname.label}" encoding="htmlcontent" />
+                                </label>
+                                <input type="input" class="form-control" id="newsletter-form-lname" 
+                                data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                                <isprint value="${pdict.newsletterForm.lname.attributes}" encoding="off" />>
+                                <div class="invalid-feedback"></div>
+                            </div>
+
+                            <div class="form-group required">
+                                <label class="form-control-label">
+                                    <isprint value="${pdict.newsletterForm.email.label}" encoding="htmlcontent" />
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="newsletter-form-email"
+                                    data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                                    data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form','forms',null)}"
+                                    <isprint value="${pdict.newsletterForm.email.attributes}" encoding="off" />>
+                                <div class="invalid-feedback"></div>
+                            </div>
+
+                            <div class="form-group  required">
+                                   <div class="row mx-1">
+                                        <input
+                                        type="checkbox"
+                                        class="form-control checboxSize shadow-none "
+                                        id="newsletter-form-agreement"
+                                        data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                                        <isprint value="${pdict.newsletterForm.agreement.attributes}"  encoding="off" />>
+                                        <label class="form-control-label">
+                                                <isprint value="${pdict.newsletterForm.agreement.label}" encoding="htmlcontent" />
+                                        </label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                            </div>
+
+                            <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                               <button type="submit" class="btn btn-block btn-primary">${Resource.msg('button.form.emailsignup', 'homePage', null)}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>
