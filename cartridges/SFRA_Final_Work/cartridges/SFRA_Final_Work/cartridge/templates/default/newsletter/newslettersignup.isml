@@ -59,10 +59,10 @@
                                         type="checkbox"
                                         class="form-control checboxSize shadow-none "
                                         id="newsletter-form-agreement"
-                                        data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                                        data-missing-error="${Resource.msg('error.message.checkbox.required','forms',null)}"
                                         <isprint value="${pdict.newsletterForm.agreement.attributes}"  encoding="off" />>
                                         <label class="form-control-label">
-                                                <isprint value="${pdict.newsletterForm.agreement.label}" encoding="htmlcontent" />
+                                               <a href="/s/SitePauloProenca/terms.html"> <isprint value="${pdict.newsletterForm.agreement.label}" encoding="htmlcontent" /></a>
                                         </label>
                                         <div class="invalid-feedback"></div>
                                     </div>

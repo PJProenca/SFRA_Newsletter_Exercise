@@ -1,6 +1,7 @@
 <isdecorate template="common/layout/page">
     <h3>
-        ${Resource.msg('error.request.subscription','newsletter',null)}
+        ${pdict.errorMsg}
+        <iscomment> ${Resource.msg('error.request.subscription','newsletter',null)} </iscomment>
     </h3>
     ${Resource.msg('returning.to.message','newsletter',null)} <a href="${pdict.continueUrl}">${Resource.msg('message.newsletter.subscrition','newsletter',null)}</a>.
 </isdecorate>

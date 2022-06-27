@@ -1,6 +1,7 @@
 <isdecorate template="common/layout/page">
 	<h3>
-		${pdict.newsletterForm.fname.value} ${pdict.newsletterForm.lname.value}, thank you for registering! 
+		${pdict.newsletterForm.fname.value} ${pdict.newsletterForm.lname.value},${pdict.successMsg} 
+		<iscomment> ${Resource.msg('message.thank.subscription','newsletter',null)} </iscomment>
 	</h3>
     <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
 	${Resource.msg('returning.to.message','newsletter',null)} <a href="${pdict.continueUrl}">${Resource.msg('message.newsletter.subscrition','newsletter',null)}</a>.

@@ -40,19 +40,20 @@ server.post(
                     co.custom.lastName = newsletterForm.lname.value
                     res.render('/newsletter/newslettersuccess',{
                         continueUrl: continueUrl,
+                        successMsg: dw.web.Resource.msg('message.thank.subscription','newsletter',null),
                         newsletterForm: newsletterForm
                     });
                 });
             }catch(e){
                 var err = e;
                 res.render('/newsletter/newslettererror', {
-                    errorMsg: dw.web.Resource.msg('error.crossfieldvalidation', 'newsletter', null),
+                    errorMsg: dw.web.Resource.msg('error.request.subscription', 'newsletter', null),
                     continueUrl: continueUrl
                 });
             }
         }else{
             res.render('/newsletter/newslettererror', {
-            errorMsg: dw.web.Resource.msg('error.crossfieldvalidation', 'newsletter', null),
+            errorMsg: dw.web.Resource.msg('error.request.subscription', 'newsletter', null),
             continueUrl: continueUrl
             });
         }
